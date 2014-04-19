@@ -1,0 +1,31 @@
+1. Download JBoss EAP 6.1.0 Alpha from "http://download.jboss.org/jbosseap/6/jboss-eap-6.1.0.Alpha/jboss-eap-6.1.0.Alpha.zip"
+
+2. Unzip the contents of "jboss-eap-6.1.0.Alpha.zip" onto any installation folder of your choice.
+
+3. Download JBoss Teiid 8.7 CR2 from "http://iweb.dl.sourceforge.net/project/teiid/teiid/8.7/CR2/teiid-8.7.0.CR2-jboss-dist.zip". You can also use the Teiid 8.7 final that has been released now 
+(https://sourceforge.net/projects/teiid/files/teiid-8.7.0.Final-jboss-dist.zip/download) and it should work fine.
+
+4. Unzip the contents of "teiid-8.7.0.CR2-jboss-dist.zip" over the root folder of the JBoss installation you did as part of step 2.
+
+5. The community EAP 6.1 Alpha release contains RestEasy 2.3.5 however the resteasy-jaxrs module must be updated to RestEasy version 2.3.6 or later to properly utilize Teiid as an OData server.  
+Working under the modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main AS directory:
+	1. Please download the "resteasy-jaxrs-2.3.6.Final-all.zip" jar available at "http://iweb.dl.sourceforge.net/project/resteasy/Resteasy%20JAX-RS/2.3.6.Final/resteasy-jaxrs-2.3.6.Final-all.zip". Unzip it and locate the "resteasy-jaxrs-2.3.6.Final.jar" that should be in the "${UNZIP_ROOT}\lib" folder.
+	2. Remove async-http-servlet-3.0-2.3.5.Final.jar and resteasy-jaxrs-2.3.5.Final.jar.
+	2. Add async-http-servlet-3.0-2.3.6.Final.jar and resteasy-jaxrs-2.3.6.Final.jar from the resteasy-jaxrs-2.3.6.Final-all.zip lib.
+	3. Modify the module.xml resources to use the 2.3.6 version jars.
+		1. Edit the contents of "${jboss-eap-6.1_HOME}\modules\system\layers\base\org\jboss\resteasy\resteasy-jaxrs\main\module.xml" file to replace the line
+			<resource-root path="async-http-servlet-3.0-2.3.5.Final.jar"/>
+        	<resource-root path="resteasy-jaxrs-2.3.5.Final.jar"/>
+	   			with
+			<resource-root path="async-http-servlet-3.0-2.3.6.Final.jar"/>
+        	<resource-root path="resteasy-jaxrs-2.3.6.Final.jar"/>
+	4. Please see "https://docs.jboss.org/author/display/teiid87final/OData+Support" for OData support in Teiid.
+
+6. You would need to also add the mySQL JDBC driver to the JBoss ecosystem.
+	1. Create a new folder structure "${jboss-eap-6.1_HOME}\modules\system\layers\base\com\mysql\jdbc\main" and copy the mySQL JDBC driver jar file to this folder.
+	2. Make changes to the module.xml file to include the correct name of the mySQL driver jar file.
+
+7. The connection definitions for mySQL and MongoDB needs to be added to the "standalone-teiid.xml" JBoss configuration file.
+
+6. You would need to start JBoss EAP 6.1.0 Alpha with the Teiid configuration file.
+	C:\Softwares\Work\jboss-eap-6.1\bin>standalone.bat --server-config=standalone-teiid.xml

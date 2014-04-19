@@ -1,0 +1,174 @@
+﻿####################################### mySQL tables #######################################
+
+# Employees - Hold the employee information for the manufacturing company
+	CREATE TABLE Employees (
+          EmployeeID integer NOT NULL AUTO_INCREMENT,
+          LastName varchar(20),
+          FirstName varchar(10),
+          Title varchar(30),
+          TitleOfCourtesy varchar(25),
+          BirthDate date,
+          HireDate date,
+          Address varchar(60),
+          City varchar(15),
+          Region varchar(15),
+          PostalCode varchar(10),
+          Country varchar(15),
+          HomePhone varchar(24),
+          Extension varchar(4),
+          Photo blob,
+          Notes varchar(4000),
+          ReportsTo integer,
+          PRIMARY KEY  (EmployeeID)
+        );
+		
+# Insert data to employee
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Davolio','Nancy','Sales Representative','Ms.','1948-12-08 00:00:00','1992-05-01 00:00:00','507 - 20th Ave. E.Apt. 2A','Seattle','WA','98122','USA','(206) 555-9857','5467',LOAD_FILE('C:\Users\Public\Pictures\Sample Pictures\Chrysanthemum.jpg'),'Education includes a BA in psychology from Colorado State University in 1970.  She also completed `The Art of the Cold Call.`  Nancy is a member of Toastmasters International.',2);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Fuller','Andrew','Vice President, Sales','Dr.','1952-02-19 00:00:00','1992-08-14 00:00:00','908 W. Capital Way','Tacoma','WA','98401','USA','(206) 555-9482','3457',LOAD_FILE('C:\Users\Public\Pictures\Sample Pictures\Desert.jpg'),'Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the University of Dallas in 1981.  He is fluent in French and Italian and reads German.  He joined the company as a sales representative, was promoted to sales manager in January 1992 and to vice president of sales in March 1993.  Andrew is a member of the Sales Management Roundtable, the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.',NULL);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Leverling','Janet','Sales Representative','Ms.','1963-08-30 00:00:00','1992-04-01 00:00:00','722 Moss Bay Blvd.','Kirkland','WA','98033','USA','(206) 555-3412','3355',NULL,'Janet has a BS degree in chemistry from Boston College (1984).  She has also completed a certificate program in food retailing management.  Janet was hired as a sales associate in 1991 and promoted to sales representative in February 1992.',2);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Peacock','Margaret','Sales Representative','Mrs.','1937-09-19 00:00:00','1993-05-03 00:00:00','4110 Old Redmond Rd.','Redmond','WA','98052','USA','(206) 555-8122','5176',NULL,'Margaret holds a BA in English literature from Concordia College (1958) and an MA from the American Institute of Culinary Arts (1966).  She was assigned to the London office temporarily from July through November 1992.',2);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Buchana','Steve','Sales Manager','Mr.','1955-03-04 00:00:00','1993-10-17 00:00:00','14 Garrett Hill','London',NULL,'SW1 8JR','UK','(71) 555-4848','3453',NULL,'Steven Buchanan graduated from St. Andrews University, Scotland, with a BSC degree in 1976.  Upon joining the company as a sales representative in 1992, he spent 6 months in an orientation program at the Seattle office and then returned to his permanent post in London.  He was promoted to sales manager in March 1993.  Mr. Buchanan has completed the courses `Successful Telemarketing` and `International Sales Management.`  He is fluent in French.',2);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Suyama','Michael','Sales Representative','Mr.','1963-07-02 00:00:00','1993-10-17 00:00:00','Coventry HouseMiner Rd.','London',NULL,'EC2 7JR','UK','(71) 555-7773','428',NULL,'Michael is a graduate of Sussex University (MA, economics, 1983) and the University of California at Los Angeles (MBA, marketing, 1986).  He has also taken the courses `Multi-Cultural Selling` and `Time Management for the Sales Professional.`  He is fluent in Japanese and can read and write French, Portuguese, and Spanish.',5);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('King','Robert','Sales Representative','Mr.','1960-05-29 00:00:00','1994-01-02 00:00:00','Edgeham HollowWinchester Way','London',NULL,'RG1 9SP','UK','(71) 555-5598','465',NULL,'Robert King served in the Peace Corps and traveled extensively before completing his degree in English at the University of Michigan in 1992, the year he joined the company.  After completing a course entitled `Selling in Europe,` he was transferred to the London office in March 1993.',5);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Callaha','Laura','Inside Sales Coordinator','Ms.','1958-01-09 00:00:00','1994-03-05 00:00:00','4726 - 11th Ave. N.E.','Seattle','WA','98105','USA','(206) 555-1189','2344',NULL,'Laura received a BA in psychology from the University of Washington.  She has also completed a course in business French.  She reads and writes French.',2);
+INSERT INTO `Employees`(`LastName`,`FirstName`,`Title`,`TitleOfCourtesy`,`BirthDate`,`HireDate`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`HomePhone`,`Extension`,`Photo`,`Notes`,`ReportsTo`) VALUES('Dodsworth','Anne','Sales Representative','Ms.','1966-01-27 00:00:00','1994-11-15 00:00:00','7 Houndstooth Rd.','London',NULL,'WG2 7LT','UK','(71) 555-4444','452',NULL,'Anne has a BA degree in English from St. Lawrence College.  She is fluent in French and German.',5);
+		
+# Customers - Holds the customers who order products from the manufacturing company
+		CREATE TABLE Customers (
+          CustomerID varchar(5) NOT NULL,
+          CompanyName varchar(40),
+          ContactName varchar(30),
+          ContactTitle varchar(30),
+          Address varchar(60),
+          City varchar(15),
+          Region varchar(15),
+          PostalCode varchar(10),
+          Country varchar(15),
+          Phone varchar(24),
+          Fax varchar(24),
+          PRIMARY KEY  (CustomerID)
+        );
+		
+# Insert data to customers
+INSERT INTO `Customers`(`CustomerID`,`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`)  VALUES('ALFKI','Alfreds Futterkiste','Maria Anders','Sales Representative','Obere Str. 57','Berlin',NULL,'12209','Germany','030-0074321','030-0076545');
+INSERT INTO `Customers`(`CustomerID`,`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`)  VALUES('ANATR','Ana Trujillo Emparedados y helados','Ana Trujillo','Owner','Avda. de la Constitución 2222','México D.F.',NULL,'05021','Mexico','(5) 555-4729','(5) 555-3745');
+INSERT INTO `Customers`(`CustomerID`,`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`)  VALUES('ANTON','Antonio Moreno Taquería','Antonio Moreno','Owner','Mataderos  2312','México D.F.',NULL,'05023','Mexico','(5) 555-3932',NULL);
+INSERT INTO `Customers`(`CustomerID`,`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`)  VALUES('AROUT','Around the Horn','Thomas Hardy','Sales Representative','120 Hanover Sq.','London',NULL,'WA1 1DP','UK','(171) 555-7788','(171) 555-6750');
+INSERT INTO `Customers`(`CustomerID`,`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`)  VALUES('BERGS','Berglunds snabbköp','Christina Berglund','Order Administrator','Berguvsvägen  8','Luleå',NULL,'S-958 22','Sweden','0921-12 34 65','0921-12 34 67');
+		
+# Suppliers - Holds the information about suppliers who supply the product the the customers from the manufacturer
+		CREATE TABLE Suppliers (
+          SupplierID integer NOT NULL AUTO_INCREMENT,
+          CompanyName varchar(40),
+          ContactName varchar(30),
+          ContactTitle varchar(30),
+          Address varchar(60),
+          City varchar(15),
+          Region varchar(15),
+          PostalCode varchar(10),
+          Country varchar(15),
+          Phone varchar(24),
+          Fax varchar(24),
+          HomePage varchar(4000),
+          PRIMARY KEY  (SupplierID)
+        );
+
+# Insert data to suppliers
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Exotic Liquids','Charlotte Cooper','Purchasing Manager','49 Gilbert St.','London',NULL,'EC1 4SD','UK','(171) 555-2222',NULL,NULL);
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('New Orleans Cajun Delights','Shelley Burke','Order Administrator','P.O. Box 78934','New Orleans','LA','70117','USA','(100) 555-4822',NULL,'#CAJUN.HTM#');
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Grandma Kelly''s Homestead','Regina Murphy','Sales Representative','707 Oxford Rd.','Ann Arbor','MI','48104','USA','(313) 555-5735','(313) 555-3349',NULL);
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Tokyo Traders','Yoshi Nagase','Marketing Manager','9-8 Sekimai Musashino-shi','Tokyo',NULL,'100','Japan','(03) 3555-5011',NULL,NULL);
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Cooperativa de Quesos ''Las Cabras''','Antonio del Valle Saavedra','Export Administrator','Calle del Rosal 4','Oviedo','Asturias','33007','Spain','(98) 598 76 54',NULL,NULL);
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Mayumi''s','Mayumi Ohno','Marketing Representative','92 Setsuko Chuo-ku','Osaka',NULL,'545','Japan','(06) 431-7877',NULL,'Mayumi''s (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/mayumi.htm#');
+INSERT INTO `Suppliers`(`CompanyName`,`ContactName`,`ContactTitle`,`Address`,`City`,`Region`,`PostalCode`,`Country`,`Phone`,`Fax`,`HomePage`) VALUES('Pavlova, Ltd.','Ian Devling','Marketing Manager','74 Rose St. Moonie Ponds','Melbourne','Victoria','3058','Australia','(03) 444-2343','(03) 444-6588',NULL);
+		
+# Shippers - Holds the information regarding the who ship the products in the order to the customers
+		CREATE TABLE Shippers (
+          ShipperID integer NOT NULL AUTO_INCREMENT,
+          CompanyName varchar(40),
+          Phone varchar(24),
+          PRIMARY KEY (ShipperID)
+        );
+
+# Insert data to shippers
+INSERT INTO `Shippers`(`CompanyName`,`Phone`) VALUES('FedEx','800-123-4567');
+INSERT INTO `Shippers`(`CompanyName`,`Phone`) VALUES('UPS','866-987-6543');
+
+####################################### MongoDB tables #######################################
+
+# Categories - Categories under which the products are grouped		
+
+# Insert data to categories collection
+> use sales;
+
+db.Categories.insert({"_id":1,"CategoryName":'Beverages',"Description":'Soft drinks, coffees, teas, beers, and ales'});
+db.Categories.insert({"_id":2,"CategoryName":'Condiments',"Description":'Sweet and savory sauces, relishes, spreads, and seasonings'});
+db.Categories.insert({"_id":3,"CategoryName":'Confections',"Description":'Desserts, candies, and sweet breads'});
+db.Categories.insert({"_id":4,"CategoryName":'Dairy Products',"Description":'Cheeses'});
+
+# Products : Details about the products offered by the manufacturer
+# References:
+#	1. Categories - via the CategoryID column to the Categories collection in MongoDB
+#	2. Suppliers - via the SupplierID column to the Suppliers table in mySQL
+
+# Insert data to products
+db.Products.insert({"_id":1,"ProductName":'Chai',"SupplierID":1,"CategoryID":1,"QuantityPerUnit":'10 boxes x 20 bags',"UnitPrice":18,"UnitsInStock":39,"UnitsOnOrder":0,"ReorderLevel":10,"Discontinued":0});
+db.Products.insert({"_id":2,"ProductName":'Chang',"SupplierID":1,"CategoryID":1,"QuantityPerUnit":'24 - 12 oz bottles',"UnitPrice":10,"UnitsInStock":13,"UnitsOnOrder":70,"ReorderLevel":25,"Discontinued":0}); 
+db.Products.insert({"_id":3,"ProductName":'Aniseed Syrup',"SupplierID":2,"CategoryID":2,"QuantityPerUnit":'12 - 550 ml bottles',"UnitPrice":19,"UnitsInStock":17,"UnitsOnOrder":20,"ReorderLevel":45,"Discontinued":0}); 
+db.Products.insert({"_id":4,"ProductName":'Chef Antons Cajun Seasoning',"SupplierID":2,"CategoryID":2,"QuantityPerUnit":'48 - 6 oz jars',"UnitPrice":22,"UnitsInStock":53,"UnitsOnOrder":0,"ReorderLevel":0,"Discontinued":0}); 
+db.Products.insert({"_id":5,"ProductName":'Chef Antons Gumbo Mix',"SupplierID":1,"CategoryID":2,"QuantityPerUnit":'36 boxes',"UnitPrice":21.35,"UnitsInStock":0,"UnitsOnOrder":0,"ReorderLevel":0,"Discontinued":1}); 
+db.Products.insert({"_id":6,"ProductName":'Grandmas Boysenberry Spread',"SupplierID":3,"CategoryID":2,"QuantityPerUnit":'12 - 8 oz jars',"UnitPrice":25,"UnitsInStock":124,"UnitsOnOrder":0,"ReorderLevel":30,"Discontinued":0}); 
+
+# Orders: Details about the orders placed by customers
+# References 
+#	1. Employees - via the EmployeeID column to the Employees table in mySQL
+#	2. Customers - via the CustomerID column to the Customers table in mySQL
+#	3. Shippers - via the ShipVia columns to the Shippers table in mySQL
+# OrderDetails : collection to be embedded within the order's collection	
+# References:
+#	1. Orders - via the OrderID column to the Orders collection in MongoDB
+#	2. Products - via the ProductID column to Products collection in MongoDB	
+		
+# Orders and OrderDetails table - Note that OrderDetails are embedded in the orders table;
+# Also note that we use the DBREF which is a convention for representing a document rather than a specific reference type.
+# DBRefs are references from one document to another using the value of the first document’s _id field, collection name, and, optionally, its database name. By 
+# including these names, DBRefs allow documents located in multiple collections to be more easily linked with documents from a single collection.
+# To resolve DBRefs, your application must perform additional queries to return the referenced documents. 
+
+db.Orders.insert({
+	"_id":1,"CustomerID":'ALFKI',"EmployeeID":5,"OrderDate":new Date('1996-07-04 00:00:00'),"RequiredDate":new Date('1996-08-01 00:00:00'),	"ShippedDate":new Date('1996-07-16 00:00:00'),"ShipVia":1,"Freight":32.36,"ShipName":'Vins et alcools Chevalier',"ShipAddress":'59 rue de lAbbaye',	"ShipCity":'Reims',"ShipRegion":null,"ShipPostalCode":'51100',"ShipCountry":'France',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 3),"odID" : DBRef("Orders", 1)},"UnitPrice":12,"Quantity":23,"Discount":0},
+	{"_id" : {"ProductID" : DBRef("Products", 5),"odID" : DBRef("Orders", 1)},"UnitPrice":22,"Quantity":10,"Discount":0}]});
+db.Orders.insert({
+	"_id":2,"CustomerID":'ANTON',"EmployeeID":4,"OrderDate":new Date('1996-07-05 00:00:00'),"RequiredDate":new Date('1996-08-16 00:00:00'),	"ShippedDate":new Date('1996-07-10 00:00:00'),"ShipVia":1,"Freight":11.61,"ShipName":'Toms Spezialitäten',"ShipAddress":'Luisenstr. 48',	"ShipCity":'Münster',"ShipRegion":null,"ShipPostalCode":'44087',"ShipCountry":'Germany',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 2),"odID" : DBRef("Orders", 2)},"UnitPrice":23.45,"Quantity":48,"Discount":0},{"_id" : {"ProductID" : DBRef("Products", 6),"odID" : DBRef("Orders", 2)},"UnitPrice":5,"Quantity":20,"Discount":0},{"_id" : {"ProductID" : DBRef("Products", 1),"odID" : DBRef("Orders", 2)},"UnitPrice":10,"Quantity":14,"Discount":0}]});
+db.Orders.insert({
+	"_id":3,"CustomerID":'BERGS',"EmployeeID":2,"OrderDate":new Date('1996-07-08 00:00:00'),"RequiredDate":new Date('1996-08-05 00:00:00'),	"ShippedDate":new Date('1996-07-12 00:00:00'),"ShipVia":2,"Freight":65.83,"ShipName":'Hanari Carnes',"ShipAddress":'Rua do Paço, 67',	"ShipCity":'Rio de Janeiro',"ShipRegion":'RJ',"ShipPostalCode":'05454-876',"ShipCountry":'Brazil',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 3),"odID" : DBRef("Orders", 3)},"UnitPrice":12,"Quantity":77,"Discount":0.1},
+	{"_id" : {"ProductID" : DBRef("Products", 4),"odID" : DBRef("Orders", 3)},"UnitPrice":12.15,"Quantity":20,"Discount":0}]});
+db.Orders.insert({
+	"_id":4,"CustomerID":'ANATR',"EmployeeID":3,"OrderDate":new Date('1996-07-08 00:00:00'),"RequiredDate":new Date('1996-08-05 00:00:00'),	"ShippedDate":new Date('1996-07-15 00:00:00'),"ShipVia":1,"Freight":41.34,"ShipName":'Victuailles en stock',"ShipAddress":'2, rue du Commerce',	"ShipCity":'Lyon',"ShipRegion":null,"ShipPostalCode":'69004',"ShipCountry":'France',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 5),"odID" : DBRef("Orders", 4)},"UnitPrice":22,"Quantity":5,"Discount":0}]});
+db.Orders.insert({
+	"_id":5,"CustomerID":'AROUT',"EmployeeID":2,"OrderDate":new Date('1996-07-09 00:00:00'),"RequiredDate":new Date('1996-08-06 00:00:00'),	"ShippedDate":new Date('1996-07-11 00:00:00'),"ShipVia":2,"Freight":51.30,"ShipName":'Suprêmes délices',"ShipAddress":'Boulevard Tirou, 255',	"ShipCity":'Lyon',"ShipRegion":null,"ShipPostalCode":'B-6000',"ShipCountry":'Belgium',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 2),"odID" : DBRef("Orders", 5)},"UnitPrice":23.45,"Quantity":100,"Discount":0}]});
+db.Orders.insert({
+	"_id":6,"CustomerID":'ANATR',"EmployeeID":6,"OrderDate":new Date('1996-07-10 00:00:00'),"RequiredDate":new Date('1996-07-24 00:00:00'),	"ShippedDate":new Date('1996-07-16 00:00:00'),"ShipVia":1,"Freight":58.17,"ShipName":'Hanari Carnes',"ShipAddress":'Rua do Paço, 67',	"ShipCity":'Rio de Janeiro',"ShipRegion":null,"ShipPostalCode":'05454-876',"ShipCountry":'Brazil',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 1),"odID" : DBRef("Orders", 6)},"UnitPrice":10,"Quantity":50,"Discount":0}]});
+db.Orders.insert({
+	"_id":7,"CustomerID":'AROUT',"EmployeeID":2,"OrderDate":new Date('1996-07-11 00:00:00'),"RequiredDate":new Date('1996-08-08 00:00:00'),	"ShippedDate":new Date('1996-07-23 00:00:00'),"ShipVia":2,"Freight":22.98,"ShipName":'Chop-suey Chinese',"ShipAddress":'Hauptstr. 31',	"ShipCity":'Bern',"ShipRegion":null,"ShipPostalCode":'3012',"ShipCountry":'Switzerland',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 3),"odID" : DBRef("Orders", 7)},"UnitPrice":12,"Quantity":52,"Discount":0}]});
+db.Orders.insert({
+	"_id":8,"CustomerID":'BERGS',"EmployeeID":3,"OrderDate":new Date('1996-07-12 00:00:00'),"RequiredDate":new Date('1996-08-09 00:00:00'),	"ShippedDate":new Date('1996-07-15 00:00:00'),"ShipVia":1,"Freight":148.33,"ShipName":'Richter Supermarkt',"ShipAddress":'Starenweg 5',	"ShipCity":'Genève',"ShipRegion":null,"ShipPostalCode":'1204',"ShipCountry":'Switzerland',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 5),"odID" : DBRef("Orders", 8)},"UnitPrice":22,"Quantity":27,"Discount":0}]});
+
+########################################Queries For Federated VDB #################################
+
+Select p.ProductID, p.ProductName, p.UnitsInStock, p.UnitsOnOrder, s.CompanyName, s.ContactName, s.City from SalesCombined.Products AS p, SalesCombined.Suppliers AS s where p.SupplierID = s.SupplierID
+
+SELECT
+		o.OrderID, o.OrderDate, od.ProductID, od.UnitPrice, od.Quantity, od.Discount, e.FirstName, e.LastName, c.CompanyName, c.Address, c.City, c.Country
+	FROM
+		sales.Orders AS o, sales.OrderDetails AS od, MySQL_Customers.Employees AS e, MySQL_Customers.Customers AS c
+	WHERE
+		(o.OrderID = od.odID) AND (o.EmployeeID = e.EmployeeID) AND (o.CustomerID = c.CustomerID)
+		
+######################################### OData URL #############################################
+
+http://localhost:8080/odata/SalesFederatedVDB/
+http://localhost:8080/odata/SalesFederatedVDB/$metadata
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Orders
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Customers
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.OrderDetailsCombinedView

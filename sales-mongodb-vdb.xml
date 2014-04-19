@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vdb name="sales_mongodb" version="1">
+    <model name="sales">
+        <source name="local" translator-name="mongodb" connection-jndi-name="java:/mongoDS"/>
+        <metadata type="DDL"><![CDATA[
+			CREATE FOREIGN TABLE Categories (
+			  CategoryID integer NOT NULL auto_increment,
+			  CategoryName varchar(15),
+			  Description varchar(4000),
+			  PRIMARY KEY  (CategoryID),
+			  UNIQUE (CategoryName)
+			)OPTIONS(UPDATABLE 'TRUE');
+			
+			CREATE FOREIGN TABLE Products (
+			  ProductID integer NOT NULL auto_increment,
+			  ProductName varchar(40),
+			  SupplierID integer NOT NULL,
+			  CategoryID integer NOT NULL,
+			  QuantityPerUnit varchar(20),
+			  UnitPrice float default '0',
+			  UnitsInStock integer default '0',
+			  UnitsOnOrder integer default '0',
+			  ReorderLevel integer default '0',
+			  Discontinued integer default '0',
+			  PRIMARY KEY  (ProductID),
+			  FOREIGN KEY (CategoryID) REFERENCES Categories (CategoryID)
+			) OPTIONS(UPDATABLE 'TRUE');
+			
+			CREATE FOREIGN TABLE Orders (
+			  OrderID integer NOT NULL auto_increment,
+			  CustomerID varchar(5),
+			  EmployeeID integer,
+			  OrderDate date,
+			  RequiredDate date,
+			  ShippedDate date,
+			  ShipVia integer,
+			  Freight float default '0',
+			  ShipName varchar(40),
+			  ShipAddress varchar(60),
+			  ShipCity varchar(15),
+			  ShipRegion varchar(15),
+			  ShipPostalCode varchar(10),
+			  ShipCountry varchar(15),
+			  PRIMARY KEY  (OrderID)
+			) OPTIONS(UPDATABLE 'TRUE');
+			
+			CREATE FOREIGN TABLE OrderDetails (
+			  odID integer NOT NULL,
+			  ProductID integer NOT NULL,
+			  UnitPrice float default '0',
+			  Quantity integer default '1',
+			  Discount float default '0',
+			  FOREIGN KEY (odID) REFERENCES Orders (OrderID),
+			  FOREIGN KEY (ProductID) REFERENCES Products (ProductID),
+			  PRIMARY KEY (odID,ProductID)
+			) OPTIONS ("teiid_mongo:MERGE" 'Orders', UPDATABLE 'TRUE');
+		]]> </metadata>
+    </model>
+</vdb>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:jdbc="http://www.metamatrix.com/metamodels/JDBC" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:relational="http://www.metamatrix.com/metamodels/Relational">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:afdafc73-5cda-42f2-9cb8-09744cf19149" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational" modelType="PHYSICAL" ProducerName="Teiid Designer" ProducerVersion="8.2.0.Final-v20130817-0508-B2400">
+    <modelImports xmi:uuid="mmuuid:3e376974-61a6-48bb-841c-60ee765c1d1b" name="XMLSchema" modelLocation="http://www.w3.org/2001/XMLSchema" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+  </mmcore:ModelAnnotation>
+  <relational:BaseTable xmi:uuid="mmuuid:659eb566-d5bd-4f36-939b-abd0fa5e475a" name="Categories" nameInSource="&quot;sales&quot;.&quot;Categories&quot;">
+    <columns xmi:uuid="mmuuid:b8019b6a-c8da-4b22-b7ea-c76e34197c15" name="CategoryID" nameInSource="&quot;CategoryID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" uniqueKeys="mmuuid/5027657c-bdc6-46a6-afc1-7889cd5ab720">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:f0185bb5-42e4-4346-88ad-6418cb59360e" name="CategoryName" nameInSource="&quot;CategoryName&quot;" nativeType="string" length="15">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:5d233cdc-2c12-463b-a83e-07ceb153cb11" name="Description" nameInSource="&quot;Description&quot;" nativeType="string" length="4000">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <primaryKey xmi:uuid="mmuuid:5027657c-bdc6-46a6-afc1-7889cd5ab720" name="PK" nameInSource="&quot;PK&quot;" columns="mmuuid/b8019b6a-c8da-4b22-b7ea-c76e34197c15" foreignKeys="mmuuid/4eca0983-57c8-4a8c-a3c1-87ba95087821"/>
+  </relational:BaseTable>
+  <relational:BaseTable xmi:uuid="mmuuid:5827f5c5-d00a-4d98-8b0a-53bdf4cff058" name="OrderDetails" nameInSource="&quot;sales&quot;.&quot;OrderDetails&quot;">
+    <columns xmi:uuid="mmuuid:fbb1d7bf-3377-4d91-864c-8eb73edf079c" name="odID" nameInSource="&quot;odID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" uniqueKeys="mmuuid/eabfe0b5-6abc-4b07-89d8-bb5a8adba4bf" foreignKeys="mmuuid/39400db7-544a-4d46-99f0-434832bf67b2">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:25917b82-304a-4ff2-9e0f-94d27c2e4029" name="ProductID" nameInSource="&quot;ProductID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" uniqueKeys="mmuuid/eabfe0b5-6abc-4b07-89d8-bb5a8adba4bf" foreignKeys="mmuuid/9a84854d-f7ff-4eda-a71b-9371ff468738">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:fd64533b-9d07-446a-af1c-ebafc5d8d6ba" name="UnitPrice" nameInSource="&quot;UnitPrice&quot;" nativeType="float" fixedLength="true" precision="7" scale="3" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#float"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:d0d025ce-bae8-4fec-a5fc-396f9b2d228c" name="Quantity" nameInSource="&quot;Quantity&quot;" nativeType="integer" fixedLength="true" precision="10" defaultValue="1" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:bd882513-2da1-49bb-b80f-b4e86650760f" name="Discount" nameInSource="&quot;Discount&quot;" nativeType="float" fixedLength="true" precision="7" scale="3" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#float"/>
+    </columns>
+    <foreignKeys xmi:uuid="mmuuid:39400db7-544a-4d46-99f0-434832bf67b2" name="FK0" nameInSource="&quot;FK0&quot;" foreignKeyMultiplicity="UNSPECIFIED" primaryKeyMultiplicity="UNSPECIFIED" columns="mmuuid/fbb1d7bf-3377-4d91-864c-8eb73edf079c" uniqueKey="mmuuid/f4559602-9682-4050-b501-3828d6af028f"/>
+    <foreignKeys xmi:uuid="mmuuid:9a84854d-f7ff-4eda-a71b-9371ff468738" name="FK1" nameInSource="&quot;FK1&quot;" foreignKeyMultiplicity="UNSPECIFIED" primaryKeyMultiplicity="UNSPECIFIED" columns="mmuuid/25917b82-304a-4ff2-9e0f-94d27c2e4029" uniqueKey="mmuuid/2c2a7379-9d60-40a0-a3de-f28f83805ebc"/>
+    <primaryKey xmi:uuid="mmuuid:eabfe0b5-6abc-4b07-89d8-bb5a8adba4bf" name="PK" nameInSource="&quot;PK&quot;" columns="mmuuid/fbb1d7bf-3377-4d91-864c-8eb73edf079c mmuuid/25917b82-304a-4ff2-9e0f-94d27c2e4029"/>
+  </relational:BaseTable>
+  <relational:BaseTable xmi:uuid="mmuuid:37085ef2-0716-4c64-a58b-3fb62957fe72" name="Orders" nameInSource="&quot;sales&quot;.&quot;Orders&quot;">
+    <columns xmi:uuid="mmuuid:ce0adb3d-7638-4be1-a88f-390df958cb0a" name="OrderID" nameInSource="&quot;OrderID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" uniqueKeys="mmuuid/f4559602-9682-4050-b501-3828d6af028f">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:d6d907d4-bbf3-40d0-b46b-2f5097929eab" name="CustomerID" nameInSource="&quot;CustomerID&quot;" nativeType="string" length="5">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:7ab51886-f1d6-4353-a648-a08695ed774f" name="EmployeeID" nameInSource="&quot;EmployeeID&quot;" nativeType="integer" fixedLength="true" precision="10" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:866c195a-4bd6-430f-8880-66057bdd4f3a" name="OrderDate" nameInSource="&quot;OrderDate&quot;" nativeType="date" fixedLength="true" precision="4" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#date"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:3d89e297-ef28-4110-bcc4-ddb625011d32" name="RequiredDate" nameInSource="&quot;RequiredDate&quot;" nativeType="date" fixedLength="true" precision="4" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#date"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:c0575778-05de-4a9e-b4f0-e1ee6a626e2e" name="ShippedDate" nameInSource="&quot;ShippedDate&quot;" nativeType="date" fixedLength="true" precision="4" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#date"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:a7b220cb-0412-44f0-a728-5353574b6ee7" name="ShipVia" nameInSource="&quot;ShipVia&quot;" nativeType="integer" fixedLength="true" precision="10" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:a1423295-625d-4f11-bd4b-d8114a50818e" name="Freight" nameInSource="&quot;Freight&quot;" nativeType="float" fixedLength="true" precision="7" scale="3" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#float"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:0d45a95a-490e-4abf-8330-70470168c80d" name="ShipName" nameInSource="&quot;ShipName&quot;" nativeType="string" length="40">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:c7c5b584-bd3c-43c5-80d1-1c4899c16ca5" name="ShipAddress" nameInSource="&quot;ShipAddress&quot;" nativeType="string" length="60">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:7e1099e4-acb8-422c-ae2d-6d916b7bbf70" name="ShipCity" nameInSource="&quot;ShipCity&quot;" nativeType="string" length="15">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:1c0da709-8be3-435d-83e3-13541db73e01" name="ShipRegion" nameInSource="&quot;ShipRegion&quot;" nativeType="string" length="15">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:4f9d456d-b057-4d61-b3a4-b5ee3ee08f75" name="ShipPostalCode" nameInSource="&quot;ShipPostalCode&quot;" nativeType="string" length="10">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:36db3749-dc98-4755-a55d-ed88d089d12c" name="ShipCountry" nameInSource="&quot;ShipCountry&quot;" nativeType="string" length="15">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <primaryKey xmi:uuid="mmuuid:f4559602-9682-4050-b501-3828d6af028f" name="PK" nameInSource="&quot;PK&quot;" columns="mmuuid/ce0adb3d-7638-4be1-a88f-390df958cb0a" foreignKeys="mmuuid/39400db7-544a-4d46-99f0-434832bf67b2"/>
+  </relational:BaseTable>
+  <relational:BaseTable xmi:uuid="mmuuid:2ecde736-7ddf-4869-84a7-6ac15c4bad5a" name="Products" nameInSource="&quot;sales&quot;.&quot;Products&quot;">
+    <columns xmi:uuid="mmuuid:7aabb0e7-a8d7-4dc5-b30b-9cbebf64cd6c" name="ProductID" nameInSource="&quot;ProductID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" uniqueKeys="mmuuid/2c2a7379-9d60-40a0-a3de-f28f83805ebc">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:07aec8e8-36e0-4ada-a0ac-09466360cf15" name="ProductName" nameInSource="&quot;ProductName&quot;" nativeType="string" length="40">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:ca3a3e4e-1e45-44eb-b20f-08fd788b487a" name="SupplierID" nameInSource="&quot;SupplierID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:a17e426d-723a-4fb4-bd98-7f81edb2e25c" name="CategoryID" nameInSource="&quot;CategoryID&quot;" nativeType="integer" fixedLength="true" precision="10" nullable="NO_NULLS" caseSensitive="false" searchability="ALL_EXCEPT_LIKE" foreignKeys="mmuuid/4eca0983-57c8-4a8c-a3c1-87ba95087821">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:b13a8c9e-ae02-4a03-9f5e-b231a6fc77fa" name="QuantityPerUnit" nameInSource="&quot;QuantityPerUnit&quot;" nativeType="string" length="20">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:196e2f3c-2e93-4c55-8dcd-76597cc9a7d0" name="UnitPrice" nameInSource="&quot;UnitPrice&quot;" nativeType="float" fixedLength="true" precision="7" scale="3" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#float"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:263e387b-760b-49ac-b1d7-a75d2c5cd003" name="UnitsInStock" nameInSource="&quot;UnitsInStock&quot;" nativeType="integer" fixedLength="true" precision="10" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:4fedc034-429e-4006-86d2-a049bd961ce8" name="UnitsOnOrder" nameInSource="&quot;UnitsOnOrder&quot;" nativeType="integer" fixedLength="true" precision="10" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:a33a58e6-c176-43b0-9e28-e36b8209a49d" name="ReorderLevel" nameInSource="&quot;ReorderLevel&quot;" nativeType="integer" fixedLength="true" precision="10" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <columns xmi:uuid="mmuuid:8173154a-b110-49ae-afb0-bb644d38c10f" name="Discontinued" nameInSource="&quot;Discontinued&quot;" nativeType="integer" fixedLength="true" precision="10" defaultValue="0" caseSensitive="false" searchability="ALL_EXCEPT_LIKE">
+      <type href="http://www.w3.org/2001/XMLSchema#int"/>
+    </columns>
+    <foreignKeys xmi:uuid="mmuuid:4eca0983-57c8-4a8c-a3c1-87ba95087821" name="FK0" nameInSource="&quot;FK0&quot;" foreignKeyMultiplicity="UNSPECIFIED" primaryKeyMultiplicity="UNSPECIFIED" columns="mmuuid/a17e426d-723a-4fb4-bd98-7f81edb2e25c" uniqueKey="mmuuid/5027657c-bdc6-46a6-afc1-7889cd5ab720"/>
+    <primaryKey xmi:uuid="mmuuid:2c2a7379-9d60-40a0-a3de-f28f83805ebc" name="PK" nameInSource="&quot;PK&quot;" columns="mmuuid/7aabb0e7-a8d7-4dc5-b30b-9cbebf64cd6c" foreignKeys="mmuuid/9a84854d-f7ff-4eda-a71b-9371ff468738"/>
+  </relational:BaseTable>
+  <mmcore:AnnotationContainer xmi:uuid="mmuuid:e25b8384-56ab-4e2e-8e64-af73c9ce8c1d">
+    <annotations xmi:uuid="mmuuid:050d4f7b-8fd4-4311-b99a-bcfbdd0fe71b" annotatedObject="mmuuid/afdafc73-5cda-42f2-9cb8-09744cf19149">
+      <tags xmi:uuid="mmuuid:40594569-658d-4bf8-95c2-6d1cf3ec913a" key="modelExtensionDefinition:core" value="core"/>
+      <tags xmi:uuid="mmuuid:9bcaaafa-3bad-4cd8-b5ac-1ab6c12e85eb" key="core:locked" value="true"/>
+      <tags xmi:uuid="mmuuid:a25995b2-e18b-4403-a9d5-e0446633d9ee" key="core:vdb-name" value="sales_mongodb"/>
+      <tags xmi:uuid="mmuuid:d51f842b-cf36-4ae1-89a6-cb66126dc82c" key="connection:driver-class" value="org.teiid.jdbc.TeiidDriver"/>
+      <tags xmi:uuid="mmuuid:6bf3509c-ed32-4018-8db3-ce88743ca455" key="connectionProfile:connectionProfileName" value="Teiid MongoDB Sales"/>
+      <tags xmi:uuid="mmuuid:c1ec65a0-8297-43f7-b5a9-6aeb79326cd1" key="connection:jarList" value="C:\Softwares\Work\eclipse\plugins\org.teiid.8.4.x_8.2.0.Final-v20130817-0508-B2400.jar"/>
+      <tags xmi:uuid="mmuuid:0341cd36-ae87-4d0d-b37b-2156c39e6adf" key="connectionProfile:connectionProfileProviderId" value="org.teiid.datatools.connectivity.connectionProfile"/>
+      <tags xmi:uuid="mmuuid:622faa33-5774-4c08-891e-50b4614b90a9" key="translator:name" value="teiid"/>
+      <tags xmi:uuid="mmuuid:2ae20b5e-14d9-4736-bac1-2997a4af22c3" key="connection:connection-url" value="jdbc:teiid:sales_mongodb@mm://localhost:31000"/>
+      <tags xmi:uuid="mmuuid:f6d4b1b6-5768-41e6-9cc9-55a535da1cd2" key="connectionProfile:connectionProfileInstanceID" value="61571cb1-c2cd-11e3-95db-aa105dfcde7f"/>
+      <tags xmi:uuid="mmuuid:ca5ec604-4723-46e6-885f-8042f65c79d6" key="connection:connectionProfileInstanceID" value="org.teiid.datatools.connectivity.connectionProfile"/>
+      <tags xmi:uuid="mmuuid:f0571303-ace9-4fa4-811d-72df23b3c9de" key="connectionProfile:connectionProfileDescription" value="Sales data from MongoDB"/>
+      <tags xmi:uuid="mmuuid:695e550a-b4b0-4870-aa34-582c17e41617" key="connection:user-name" value="user"/>
+      <tags xmi:uuid="mmuuid:80a3945c-2a49-44b1-856d-47efaa342562" key="connectionProfile:connectionProfileCategory" value="org.eclipse.datatools.connectivity.db.category"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:51d9e9e9-a718-4d0b-8b8c-dadaf4c5368b" annotatedObject="mmuuid/40594569-658d-4bf8-95c2-6d1cf3ec913a">
+      <tags xmi:uuid="mmuuid:be0d8971-e3fd-4bc4-b9e4-77ad3bfb855e" key="metamodel" value="http://www.metamatrix.com/metamodels/Core"/>
+      <tags xmi:uuid="mmuuid:970a8622-a3ee-4c1c-8b28-b068f130ec81" key="namespacePrefix" value="core"/>
+      <tags xmi:uuid="mmuuid:7206107c-a095-4f71-9a34-4f86139c2c0c" key="namespaceUri" value="http://www.teiid.org/ext/core/2012"/>
+      <tags xmi:uuid="mmuuid:83003b25-d0fc-4822-883c-e8d787e04f23" key="version" value="2"/>
+      <tags xmi:uuid="mmuuid:42ee48f8-bf4f-4869-8e08-bc231bfdb666" key="description" value="Core metamodel extension properties"/>
+      <tags xmi:uuid="mmuuid:11db964b-166d-4bd6-a599-2bc253d2e9d1" key="extendedMetaclass:org.teiid.designer.metamodels.core.impl.ModelAnnotationImpl" value="org.teiid.designer.metamodels.core.impl.ModelAnnotationImpl"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:5b861936-c7e3-4bd6-8a49-e889520a73da" annotatedObject="mmuuid/11db964b-166d-4bd6-a599-2bc253d2e9d1">
+      <tags xmi:uuid="mmuuid:6f5e872b-8788-4fb4-ad44-579290c0660b" key="propertyDefinition:locked" value="locked"/>
+      <tags xmi:uuid="mmuuid:f1715236-10ef-454e-8134-09802375455d" key="propertyDefinition:vdb-name" value="vdb-name"/>
+      <tags xmi:uuid="mmuuid:47318ef8-1255-4e61-bab9-d766f0982399" key="propertyDefinition:vdb-version" value="vdb-version"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:f3cb5919-a15a-44d4-9f9e-c3edb2d96e67" annotatedObject="mmuuid/6f5e872b-8788-4fb4-ad44-579290c0660b">
+      <tags xmi:uuid="mmuuid:2ece49c5-7e1b-4aec-9bfd-cc658213306e" key="advanced" value="false"/>
+      <tags xmi:uuid="mmuuid:bcd0a7dd-a2e1-419a-9c1b-54049d393e5d" key="displayName" value=""/>
+      <tags xmi:uuid="mmuuid:9a04973f-e5f0-4804-8748-358259027b92" key="defaultValue" value="false"/>
+      <tags xmi:uuid="mmuuid:94fed6ff-d383-4b45-a401-c7ff15103587" key="description" value=""/>
+      <tags xmi:uuid="mmuuid:6c9389e6-6b5a-46c8-b17d-ec3c8314fb48" key="id" value="locked"/>
+      <tags xmi:uuid="mmuuid:02c229ba-6efd-4b83-b5b1-05df434b6eb7" key="index" value="false"/>
+      <tags xmi:uuid="mmuuid:836cee4b-4983-47de-a212-b20495977a65" key="modifiable" value="true"/>
+      <tags xmi:uuid="mmuuid:8b4026bc-7006-405f-a2f5-4a22a8c54840" key="masked" value="false"/>
+      <tags xmi:uuid="mmuuid:fa91a25d-7457-4691-b7e1-122106ac1c79" key="required" value="false"/>
+      <tags xmi:uuid="mmuuid:667b3fa4-e113-47ef-9678-c6ced20293d8" key="runtimeType" value="boolean"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:acbc2e0e-fef1-415f-ba1a-ecf0d95bb519" annotatedObject="mmuuid/bcd0a7dd-a2e1-419a-9c1b-54049d393e5d">
+      <tags xmi:uuid="mmuuid:fe48e3be-b0a2-4429-a446-5ce64f832fce" key="en" value="Locked"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:428c6b9e-dc3a-4942-a091-6755953f9e7f" annotatedObject="mmuuid/94fed6ff-d383-4b45-a401-c7ff15103587">
+      <tags xmi:uuid="mmuuid:f3e3f3c7-61d6-44f1-9660-a638d1d0031c" key="en" value="Specifies that a model is unmodifiable"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:57a0aeb8-0045-4b9e-971b-5bd2f83fc34b" annotatedObject="mmuuid/f1715236-10ef-454e-8134-09802375455d">
+      <tags xmi:uuid="mmuuid:d0939d84-e6ea-4356-bafc-721867964b1a" key="advanced" value="false"/>
+      <tags xmi:uuid="mmuuid:f5970594-d97c-453b-be2a-4bf0ea147fef" key="displayName" value=""/>
+      <tags xmi:uuid="mmuuid:abf3d4f9-d7df-4616-9687-ff0abb220018" key="description" value=""/>
+      <tags xmi:uuid="mmuuid:349c94a5-0fc5-43ea-bd7a-0984296a6c11" key="id" value="vdb-name"/>
+      <tags xmi:uuid="mmuuid:4aa36761-5581-4e69-81e8-adb3d029f6cc" key="index" value="false"/>
+      <tags xmi:uuid="mmuuid:c9b42f13-5774-4178-9860-29bc2a8f1c3e" key="modifiable" value="true"/>
+      <tags xmi:uuid="mmuuid:c11ce1a5-0177-44e6-ab1b-a731deb13fd5" key="masked" value="false"/>
+      <tags xmi:uuid="mmuuid:5a66fe93-ada8-4ee1-a0f8-7d6b6cedc3d8" key="required" value="false"/>
+      <tags xmi:uuid="mmuuid:82a253ed-202f-468f-8ccf-e924d8053c51" key="runtimeType" value="string"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:4fd7c59d-c959-4df5-a5ce-7b5039f2bd75" annotatedObject="mmuuid/f5970594-d97c-453b-be2a-4bf0ea147fef">
+      <tags xmi:uuid="mmuuid:56397222-d97b-429f-ae28-ff64595efe94" key="en" value="VDB Name"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:e8399e14-21d1-4dcc-840a-772a366e34d8" annotatedObject="mmuuid/abf3d4f9-d7df-4616-9687-ff0abb220018">
+      <tags xmi:uuid="mmuuid:5e805db1-3937-4611-8a37-4904c3551e44" key="en" value="Name of source VDB"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:237a2f7b-96b9-4943-ae93-d373c3407011" annotatedObject="mmuuid/47318ef8-1255-4e61-bab9-d766f0982399">
+      <tags xmi:uuid="mmuuid:53cd1fc9-46a0-4c9d-a185-7d4c1a6bc562" key="advanced" value="false"/>
+      <tags xmi:uuid="mmuuid:2fef4a49-6dcc-47fc-959e-6c841ca1883d" key="displayName" value=""/>
+      <tags xmi:uuid="mmuuid:c764df0c-4e3b-4dbc-bcfb-e49fe2cb5a86" key="defaultValue" value="1"/>
+      <tags xmi:uuid="mmuuid:0ac23719-d108-4f18-8635-2a6cc7f89457" key="description" value=""/>
+      <tags xmi:uuid="mmuuid:e0fd73a1-bc2d-45bd-8d07-cb60da3c6b14" key="id" value="vdb-version"/>
+      <tags xmi:uuid="mmuuid:09550527-6e05-4ff1-865a-38d0d38188b6" key="index" value="false"/>
+      <tags xmi:uuid="mmuuid:5ddd38d9-0550-48fd-8049-87e204160eb3" key="modifiable" value="true"/>
+      <tags xmi:uuid="mmuuid:ca738cd8-85ac-4531-9bb0-97c56a42ddfa" key="masked" value="false"/>
+      <tags xmi:uuid="mmuuid:37c536a2-5477-4926-b195-a1064e5c4d15" key="required" value="false"/>
+      <tags xmi:uuid="mmuuid:09fee6bb-a832-4038-8e6f-dadb6cc4db08" key="runtimeType" value="integer"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:38e78f82-5ec4-4460-a9d4-e4c4671b70d2" annotatedObject="mmuuid/2fef4a49-6dcc-47fc-959e-6c841ca1883d">
+      <tags xmi:uuid="mmuuid:719650bb-4a0c-4ce2-a9c7-4f3fef61f1ee" key="en" value="VDB Version"/>
+    </annotations>
+    <annotations xmi:uuid="mmuuid:64216ee5-394a-41e5-8456-750f80252903" annotatedObject="mmuuid/0ac23719-d108-4f18-8635-2a6cc7f89457">
+      <tags xmi:uuid="mmuuid:737846f6-2900-42e3-83c6-a0e7456a0022" key="en" value="Version of source VDB"/>
+    </annotations>
+  </mmcore:AnnotationContainer>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:66031749-bb51-4b12-8ea4-7cb2c8c425e2"/>
+  <jdbc:JdbcSource xmi:uuid="mmuuid:1b0eefa6-4eff-4835-867b-513043fa1fa9" name="Teiid MongoDB Sales" driverName="Teiid Server JDBC Driver 8.4 Default" driverClass="org.teiid.jdbc.TeiidDriver" username="user" url="jdbc:teiid:sales_mongodb@mm://localhost:31000">
+    <importSettings xmi:uuid="mmuuid:7db2bb77-d930-464f-b43d-37a10d073c2b" createCatalogsInModel="false" createSchemasInModel="false" includeIndexes="false" includeApproximateIndexes="false">
+      <includedSchemaPaths>/sales</includedSchemaPaths>
+      <includedTableTypes>TABLE</includedTableTypes>
+    </importSettings>
+  </jdbc:JdbcSource>
+</xmi:XMI>
