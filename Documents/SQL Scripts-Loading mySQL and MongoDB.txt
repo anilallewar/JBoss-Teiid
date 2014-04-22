@@ -153,22 +153,3 @@ db.Orders.insert({
 	"_id":7,"CustomerID":'AROUT',"EmployeeID":2,"OrderDate":new Date('1996-07-11 00:00:00'),"RequiredDate":new Date('1996-08-08 00:00:00'),	"ShippedDate":new Date('1996-07-23 00:00:00'),"ShipVia":2,"Freight":22.98,"ShipName":'Chop-suey Chinese',"ShipAddress":'Hauptstr. 31',	"ShipCity":'Bern',"ShipRegion":null,"ShipPostalCode":'3012',"ShipCountry":'Switzerland',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 3),"odID" : DBRef("Orders", 7)},"UnitPrice":12,"Quantity":52,"Discount":0}]});
 db.Orders.insert({
 	"_id":8,"CustomerID":'BERGS',"EmployeeID":3,"OrderDate":new Date('1996-07-12 00:00:00'),"RequiredDate":new Date('1996-08-09 00:00:00'),	"ShippedDate":new Date('1996-07-15 00:00:00'),"ShipVia":1,"Freight":148.33,"ShipName":'Richter Supermarkt',"ShipAddress":'Starenweg 5',	"ShipCity":'Genève',"ShipRegion":null,"ShipPostalCode":'1204',"ShipCountry":'Switzerland',"OrderDetails":[{"_id" : {"ProductID" : DBRef("Products", 5),"odID" : DBRef("Orders", 8)},"UnitPrice":22,"Quantity":27,"Discount":0}]});
-
-########################################Queries For Federated VDB #################################
-
-Select p.ProductID, p.ProductName, p.UnitsInStock, p.UnitsOnOrder, s.CompanyName, s.ContactName, s.City from SalesCombined.Products AS p, SalesCombined.Suppliers AS s where p.SupplierID = s.SupplierID
-
-SELECT
-		o.OrderID, o.OrderDate, od.ProductID, od.UnitPrice, od.Quantity, od.Discount, e.FirstName, e.LastName, c.CompanyName, c.Address, c.City, c.Country
-	FROM
-		sales.Orders AS o, sales.OrderDetails AS od, MySQL_Customers.Employees AS e, MySQL_Customers.Customers AS c
-	WHERE
-		(o.OrderID = od.odID) AND (o.EmployeeID = e.EmployeeID) AND (o.CustomerID = c.CustomerID)
-		
-######################################### OData URL #############################################
-
-http://localhost:8080/odata/SalesFederatedVDB/
-http://localhost:8080/odata/SalesFederatedVDB/$metadata
-http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Orders
-http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Customers
-http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.OrderDetailsCombinedView

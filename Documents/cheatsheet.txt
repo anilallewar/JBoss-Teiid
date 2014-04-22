@@ -1,0 +1,24 @@
+######################################## Federation - Where clause #############################################
+
+WHERE
+		(sales.Orders.OrderID = sales.OrderDetails.odID) AND (sales.Orders.CustomerID = MySQL_Customers.customers.CustomerID) AND (sales.Orders.EmployeeID = MySQL_Customers.employees.EmployeeID)
+
+######################################## Queries For Federated VDB - Using SQL #################################
+
+Select p.ProductID, p.ProductName, p.UnitsInStock, p.UnitsOnOrder, s.CompanyName, s.ContactName, s.City from SalesCombined.Products AS p, SalesCombined.Suppliers AS s where p.SupplierID = s.SupplierID
+
+SELECT
+		o.OrderID, o.OrderDate, od.ProductID, od.UnitPrice, od.Quantity, od.Discount, e.FirstName, e.LastName, c.CompanyName, c.Address, c.City, c.Country
+	FROM
+		sales.Orders AS o, sales.OrderDetails AS od, MySQL_Customers.Employees AS e, MySQL_Customers.Customers AS c
+	WHERE
+		(o.OrderID = od.odID) AND (o.EmployeeID = e.EmployeeID) AND (o.CustomerID = c.CustomerID)
+		
+######################################### OData URLs ############################################################
+
+http://localhost:8080/odata/SalesFederatedVDB/
+http://localhost:8080/odata/SalesFederatedVDB/$metadata
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Orders
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.Customers
+http://localhost:8080/odata/SalesFederatedVDB/SalesCombined.OrderDetailsCombinedView
+		
